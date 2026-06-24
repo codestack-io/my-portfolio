@@ -1,26 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f9ff;
+  --foreground: #020617;
+  
+  --color-primary-val: #0284c7;
+  --color-surface-val: #ffffff;
+  --color-on-surface-val: #0f172a;
+  --color-on-surface-variant-val: #475569;
+  --color-primary-fixed-dim-val: #0369a1;
+  --color-surface-container-val: #f1f5f9;
+  --color-surface-container-lowest-val: #ffffff;
+  --color-surface-container-highest-val: #cbd5e1;
+  --color-border-val: rgba(15, 23, 42, 0.12);
+  --color-secondary-val: #475569;
+  --color-secondary-fixed-dim-val: #64748b;
+  --color-secondary-fixed-val: #cbd5e1;
+  --color-on-secondary-fixed-variant-val: #475569;
+  --color-error-container-val: #fee2e2;
+  --color-error-val: #ef4444;
+  --color-tertiary-val: #3b82f6;
+  --color-tertiary-container-val: #dbeafe;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root.dark {
+  --background: #111316;
+  --foreground: #e2e2e6;
+
+  --color-primary-val: #fff1da;
+  --color-surface-val: #111316;
+  --color-on-surface-val: #e2e2e6;
+  --color-on-surface-variant-val: #d1c5b2;
+  --color-primary-fixed-dim-val: #e9c16a;
+  --color-surface-container-val: #1e2023;
+  --color-surface-container-lowest-val: #0c0e11;
+  --color-surface-container-highest-val: #333538;
+  --color-border-val: rgba(255, 255, 255, 0.1);
+  --color-secondary-val: #c6c6c7;
+  --color-secondary-fixed-dim-val: #c6c6c7;
+  --color-secondary-fixed-val: #e2e2e2;
+  --color-on-secondary-fixed-variant-val: #454747;
+  --color-error-container-val: #93000a;
+  --color-error-val: #ffb4ab;
+  --color-tertiary-val: #f1f1ff;
+  --color-tertiary-container-val: #cfd5f1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-primary: var(--color-primary-val);
+  --color-surface: var(--color-surface-val);
+  --color-on-surface: var(--color-on-surface-val);
+  --color-on-surface-variant: var(--color-on-surface-variant-val);
+  --color-primary-fixed-dim: var(--color-primary-fixed-dim-val);
+  --color-surface-container: var(--color-surface-container-val);
+  --color-surface-container-lowest: var(--color-surface-container-lowest-val);
+  --color-surface-container-highest: var(--color-surface-container-highest-val);
+  --color-border-custom: var(--color-border-val);
+  --color-secondary: var(--color-secondary-val);
+  --color-secondary-fixed-dim: var(--color-secondary-fixed-dim-val);
+  --color-secondary-fixed: var(--color-secondary-fixed-val);
+  --color-on-secondary-fixed-variant: var(--color-on-secondary-fixed-variant-val);
+  --color-error-container: var(--color-error-container-val);
+  --color-error: var(--color-error-val);
+  --color-tertiary: var(--color-tertiary-val);
+  --color-tertiary-container: var(--color-tertiary-container-val);
+
+  /* Spacing configuration */
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-md: 1.5rem;
+  --spacing-stack-lg: 4rem;
+  --spacing-gutter: 2rem;
+  --spacing-margin-mobile: 1.5rem;
+  --spacing-container-max: 1280px;
+
+  /* Font mapping */
+  --font-sans: var(--font-dm-sans), sans-serif;
+  --font-serif: var(--font-source-serif-4), serif;
+  --font-mono: var(--font-fira-code), monospace;
+
+  /* Keyframe animations */
+  --animate-spin-slow: spin-slow 25s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-scan: scan 4s linear infinite;
+  --animate-subtle-drift: subtle-drift 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); filter: brightness(1); }
+    50% { transform: translateY(-16px) scale(1.01); filter: brightness(1.15); }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+  }
+  @keyframes subtle-drift {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
   }
 }
 
+/* Global resets and background custom styling */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 300ms ease, color 300ms ease;
+  overflow-x: hidden;
+}
+
+/* Custom visual components */
+.glass-container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
+}
+.dark .glass-container {
+  background: rgba(12, 14, 17, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+.dark .glass-panel {
+  background: rgba(12, 14, 17, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #7dd3fc 0%, #86efac 100%);
+  opacity: 0.45;
+  filter: blur(20px);
+  border-radius: 9999px;
+}
+.dark .gradient-mesh {
+  background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+  opacity: 0.35;
+}
+
+.active-icon-glow {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.85);
+}
+.dark .active-icon-glow {
+  text-shadow: 0 0 12px rgba(233, 193, 106, 0.5);
+}
+
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-size: 28px;
+}
+.material-symbols-rounded.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary-val), transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: scan 4s linear infinite;
+  opacity: 0.15;
+  z-index: 10;
+}
+
+.misty-overlay {
+  background: radial-gradient(circle at center, transparent 0%, rgba(240, 249, 255, 0.8) 100%);
+  pointer-events: none;
+}
+.dark .misty-overlay {
+  background: radial-gradient(circle at center, transparent 0%, rgba(17, 19, 22, 0.95) 100%);
+}
+
+.dotted-line {
+  background-image: radial-gradient(rgba(2, 132, 199, 0.15) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+.dark .dotted-line {
+  background-image: radial-gradient(rgba(233, 193, 106, 0.25) 1px, transparent 1px);
+}
+
+.active-nav-glow {
+  text-shadow: 0 0 12px rgba(2, 132, 199, 0.4);
+}
+.dark .active-nav-glow {
+  text-shadow: 0 0 12px rgba(233, 193, 106, 0.4);
+}
+
+.stack-item-hover:hover {
+  transform: translateX(4px);
+  border-color: rgba(2, 132, 199, 0.3);
+}
+.dark .stack-item-hover:hover {
+  border-color: rgba(233, 193, 106, 0.3);
+}
+
+/* Custom typography settings */
+.text-label-serif {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: var(--font-source-serif-4), serif;
+}
+.text-headline-md {
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.text-nav-link {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.text-body-lg {
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.text-display-lg-mobile {
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.text-display-lg {
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+.font-nav-link {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.font-body-lg {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.font-label-serif {
+  font-family: var(--font-source-serif-4), serif;
+}
+.font-display-lg {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.font-display-lg-mobile {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.font-headline-md {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+.font-mono {
+  font-family: var(--font-fira-code), monospace;
 }
