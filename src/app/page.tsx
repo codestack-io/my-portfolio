@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
+import Education from "@/components/Education";
 import TechStack from "@/components/TechStack";
 import BottomNavbar from "@/components/BottomNavbar";
 import CursorGlow from "@/components/CursorGlow";
@@ -23,6 +24,7 @@ export default function Home() {
       <main className="flex-grow flex flex-col w-full relative z-10">
         <Hero />
         <AboutMe />
+        <Education />
         <TechStack />
       </main>
 

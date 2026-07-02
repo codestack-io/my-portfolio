@@ -12,6 +12,7 @@ export default function BottomNavbar() {
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const initialTheme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : (systemDark ? "dark" : "light");
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(initialTheme);
     if (initialTheme === "dark") {
       document.documentElement.classList.add("dark");
@@ -22,7 +23,7 @@ export default function BottomNavbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "stack", "footer"];
+      const sections = ["hero", "about", "education", "stack", "footer"];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -102,6 +103,24 @@ export default function BottomNavbar() {
               search
             </span>
             {activeSection === "about" && (
+              <div className="absolute bottom-1 w-1.5 h-1.5 bg-primary rounded-full opacity-80 shadow-[0_0_8px_var(--color-primary-val)]"></div>
+            )}
+          </button>
+
+          {/* School/Education Link */}
+          <button
+            onClick={() => scrollToSection("education")}
+            className="relative flex flex-col items-center justify-center transition-all hover:scale-110 cursor-pointer bg-transparent border-none p-2 md:p-2.5 rounded-full hover:bg-white/10 active:bg-white/20 duration-300"
+            aria-label="Scroll to Education section"
+          >
+            <span
+              className={`material-symbols-rounded text-on-surface ${
+                activeSection === "education" ? "filled active-icon-glow" : "opacity-80 hover:opacity-100"
+              }`}
+            >
+              school
+            </span>
+            {activeSection === "education" && (
               <div className="absolute bottom-1 w-1.5 h-1.5 bg-primary rounded-full opacity-80 shadow-[0_0_8px_var(--color-primary-val)]"></div>
             )}
           </button>

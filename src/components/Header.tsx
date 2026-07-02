@@ -46,6 +46,12 @@ export default function Header() {
               PROFILE
             </button>
             <button
+              onClick={() => scrollToSection("#education")}
+              className="text-on-surface-variant hover:text-primary transition-all duration-300 hover:active-nav-glow hover:scale-105"
+            >
+              EDUCATION
+            </button>
+            <button
               onClick={() => scrollToSection("#stack")}
               className="text-on-surface-variant hover:text-primary transition-all duration-300 hover:active-nav-glow hover:scale-105"
             >
@@ -95,6 +101,12 @@ export default function Header() {
             className="text-left text-on-surface-variant hover:text-primary font-nav-link pl-4 flex items-center gap-4 hover:bg-white/5 py-2 rounded transition-all active:translate-x-1"
           >
             <span className="material-symbols-outlined">person</span> DEVELOPER_PROFILE
+          </button>
+          <button
+            onClick={() => scrollToSection("#education")}
+            className="text-left text-on-surface-variant hover:text-primary font-nav-link pl-4 flex items-center gap-4 hover:bg-white/5 py-2 rounded transition-all active:translate-x-1"
+          >
+            <span className="material-symbols-outlined">school</span> EDUCATION
           </button>
           <button
             onClick={() => scrollToSection("#stack")}

@@ -36,7 +36,7 @@ export default function Hero() {
 
           {/* Quote 2: Top-Right */}
           <div className="absolute top-12 right-0 md:right-4 font-mono text-[10px] md:text-xs tracking-widest text-on-surface-variant opacity-60 uppercase px-2 py-1 glass-panel select-none">
-            // SIMPLICITY IS EFFICIENCY
+            {"// SIMPLICITY IS EFFICIENCY"}
           </div>
 
           {/* Quote 3: Bottom-Left */}
