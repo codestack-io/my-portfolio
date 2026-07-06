@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectCardProps {
-    project: {
-        _id?: string;
-        title: string;
-        slug: string;
-        image: string;
-        shortDescription: string;
-        technologies: string[];
-    };
+  project: {
+    id: number;
+    title: string;
+    slug: string;
+    image: string;
+    shortDescription: string;
+    technologies: string[];
+    github: string;
+    live: string;
+  };
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
@@ -42,12 +44,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     ))}
                 </div>
 
-                <Link
-                    href={`/projects/${project.slug}`}
-                    className="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
-                >
-                    View Details →
-                </Link>
+                
+                <div className="flex gap-3 mt-4">
+  <Link
+    href={project.live}
+    target="_blank"
+    className="bg-green-600 text-white px-4 py-2 rounded-lg"
+  >
+    Live Demo
+  </Link>
+
+  <Link
+    href={project.github}
+    target="_blank"
+    className="bg-gray-800 text-white px-4 py-2 rounded-lg"
+  >
+    GitHub
+  </Link>
+</div>
             </div>
         </div>
     );

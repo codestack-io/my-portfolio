@@ -37,7 +37,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:sahaantara444@gmail.com"
+              href="mailto:[sahaantara444@gmail.com]"
               className="font-label-serif text-label-serif text-on-surface-variant hover:text-primary transition-all duration-300"
             >
               Email
