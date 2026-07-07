@@ -9,7 +9,8 @@ interface ProjectCardProps {
     image: string;
     shortDescription: string;
     technologies: string[];
-    github: string;
+    githubClient?: string;
+    githubServer?: string;
     live: string;
   };
 }
@@ -45,22 +46,34 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 </div>
 
                 
-                <div className="flex gap-3 mt-4">
+  <div className="flex flex-wrap gap-3 mt-4">
   <Link
     href={project.live}
     target="_blank"
-    className="bg-green-600 text-white px-4 py-2 rounded-lg"
+    className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
   >
     Live Demo
   </Link>
 
-  <Link
-    href={project.github}
-    target="_blank"
-    className="bg-gray-800 text-white px-4 py-2 rounded-lg"
-  >
-    GitHub
-  </Link>
+  {project.githubClient && (
+    <Link
+      href={project.githubClient}
+      target="_blank"
+      className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-black transition"
+    >
+      {project.githubServer ? "Client Code" : "GitHub"}
+    </Link>
+  )}
+
+  {project.githubServer && (
+    <Link
+      href={project.githubServer}
+      target="_blank"
+      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+    >
+      Server Code
+    </Link>
+  )}
 </div>
             </div>
         </div>
