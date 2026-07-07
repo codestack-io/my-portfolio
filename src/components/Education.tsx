@@ -20,7 +20,7 @@ const educationData: EducationItem[] = [
     result: "CGPA: 3.66/4.00",
 
     description: "Focused on web development, data science, staistics.",
-    icon: "school",
+    icon: "University",
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
@@ -28,14 +28,14 @@ const educationData: EducationItem[] = [
     duration: "2019 – 2021",
     result: "GPA: 5.00/5.00",
     coursework: ["Physics", "Chemistry", "Higher Mathematics", "Information & Communication Technology"],
-    icon: "history_edu",
+    icon: "College",
   },
   {
     degree: "Secondary School Certificate (SSC)",
     institution: "Narsingdi govt. Girls' High School",
     duration: "2009 – 2019",
     result: "GPA: 4.89/5.00",
-    icon: "menu_book",
+    icon: "School",
   },
 ];
 

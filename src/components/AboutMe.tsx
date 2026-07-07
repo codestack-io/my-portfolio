@@ -80,8 +80,8 @@ export default function AboutMe() {
             <div className="flex flex-wrap gap-4">
               <span className="font-label-serif text-label-serif text-primary italic">React.js</span>
               <span className="font-label-serif text-label-serif text-primary italic">Node.js</span>
-              <span className="font-label-serif text-label-serif text-primary italic">TypeScript</span>
-              <span className="font-label-serif text-label-serif text-primary italic">PostgreSQL</span>
+              <span className="font-label-serif text-label-serif text-primary italic">JavaScript</span>
+              <span className="font-label-serif text-label-serif text-primary italic">Next.js</span>
             </div>
           </div>
           <div className="max-w-xs text-left lg:text-right">
