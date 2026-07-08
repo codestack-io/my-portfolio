@@ -1,6 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
+
 
 interface EducationItem {
   degree: string;
@@ -38,6 +41,38 @@ const educationData: EducationItem[] = [
     icon: "School",
   },
 ];
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+const fadeLeft = {
+  hidden: {
+    opacity: 0,
+    x: -80,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+const fadeRight = {
+  hidden: {
+    opacity: 0,
+    x: 80,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
+};
 
 export default function Education() {
   const [visibleItems, setVisibleItems] = useState([0, 1, 2]);
@@ -75,7 +110,55 @@ export default function Education() {
       className="relative z-10 py-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full overflow-hidden"
     >
       {/* Section Header */}
-      <div className="mb-stack-lg">
+   <motion.div
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.8 }}
+>
+  <div className="absolute inset-0 overflow-hidden -z-10">
+
+    <motion.div
+        animate={{
+            x:[0,120,0],
+            y:[0,-80,0],
+        }}
+        transition={{
+            duration:16,
+            repeat:Infinity,
+            ease:"easeInOut",
+        }}
+        className="absolute
+        w-[350px]
+        h-[350px]
+        rounded-full
+        bg-cyan-500/10
+        blur-[120px]
+        top-20
+        left-0"
+    />
+
+    <motion.div
+        animate={{
+            x:[0,-100,0],
+            y:[0,80,0],
+        }}
+        transition={{
+            duration:18,
+            repeat:Infinity,
+            ease:"easeInOut",
+        }}
+        className="absolute
+        w-[300px]
+        h-[300px]
+        rounded-full
+        bg-violet-500/10
+        blur-[120px]
+        right-0
+        bottom-0"
+    />
+
+</div>
         <h2 className="font-label-serif text-label-serif text-primary-fixed-dim uppercase tracking-[0.2em] mb-2">
           ACADEMIC_RECORD_V1
         </h2>
@@ -85,7 +168,7 @@ export default function Education() {
         <p className="text-secondary font-label-serif max-w-2xl opacity-80">
           Chronological breakdown of formal credentials, academic programs, and foundational coursework.
         </p>
-      </div>
+      </motion.div>
 
       {/* Timeline Layout */}
       <div className="relative max-w-4xl mx-auto py-8">

@@ -17,7 +17,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     return (
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+        <div className="bg-[#0F172A] rounded-2xl shadow-lg overflow-hidden border border-slate-700 hover:border-cyan-400/40 hover:shadow-[0_0_35px_rgba(6,182,212,0.15)] transition-all duration-500">
             <div className="relative h-56 w-full">
                 <Image
                     src={project.image}

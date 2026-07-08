@@ -1,4 +1,35 @@
-export default function Footer() {
+"use client";
+ export default function Footer() {
+  const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+
+  const formData = new FormData(form);
+
+  const body = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (res.ok) {
+    alert("Message sent successfully!");
+    form.reset();
+  } else {
+    alert("Failed to send message.");
+  }
+};
   return (
     <footer
       id="footer"
@@ -42,49 +73,48 @@ export default function Footer() {
             >
               Email
             </a>
+           <form
+  className="max-w-xl space-y-4"
+  onSubmit={handleSubmit}
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    className="w-full p-4 rounded-xl bg-surface-container border border-border-custom"
+    required
+  />
 
-            {/* Replace this with your Read.cv URL or remove it */}
-            <a
-              href="https://read.cv/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-label-serif text-label-serif text-on-surface-variant hover:text-primary transition-all duration-300"
-            >
-              Read.cv
-            </a>
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    className="w-full p-4 rounded-xl bg-surface-container border border-border-custom"
+    required
+  />
+
+  <textarea
+    name="message"
+    rows={5}
+    placeholder="Your Message"
+    className="w-full p-4 rounded-xl bg-surface-container border border-border-custom resize-none"
+    required
+  />
+    
+  <button
+    className="bg-primary text-on-primary px-8 py-4 rounded-full"
+  >
+    Send Message
+  </button>
+  
+</form>
+            
           </div>
         </div>
 
-        {/* Bottom Segment */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-border-custom">
-          <div className="flex flex-col gap-1">
-            <span className="text-nav-link font-nav-link text-secondary">
-              ©2026_STABLE_BUILD_4.0.1
-            </span>
-
-            <span className="font-mono text-[10px] text-on-surface-variant opacity-45">
-              SYSTEM STATUS: V4.2.0_STABLE
-            </span>
-          </div>
-
-          <div className="flex gap-8">
-            <a
-              href="https://github.com/codestack-io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-on-secondary-fixed-variant font-nav-link hover:text-primary transition-colors active:scale-95"
-            >
-              SOURCE_CODE
-            </a>
-
-            <a
-              href="mailto:sahaantara444@gmail.com"
-              className="text-on-secondary-fixed-variant font-nav-link hover:text-primary transition-colors active:scale-95"
-            >
-              CONTACT_ME
-            </a>
-          </div>
-        </div>
+        
+          
+        
       </div>
     </footer>
   );

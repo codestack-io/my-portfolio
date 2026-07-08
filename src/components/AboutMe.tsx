@@ -1,4 +1,76 @@
+"use client";
 import Image from "next/image";
+import {
+  RiReactjsLine,
+  RiNextjsFill,
+  RiJavascriptFill,
+  RiNodejsLine,
+  RiGithubFill,
+} from "react-icons/ri";
+
+import {
+  SiTailwindcss,
+  SiDaisyui,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+  SiStripe,
+  SiPostman,
+  SiFigma,
+  SiFramer,
+  SiCloudinary,
+} from "react-icons/si";
+
+import { FaRobot } from "react-icons/fa";
+import { BsStars } from "react-icons/bs";
+import { TbComponents } from "react-icons/tb";
+
+import { motion } from "framer-motion";
+
+const skillCategories = [
+  {
+    title: "Frontend Development",
+    skills: [
+      { name: "React", icon: RiReactjsLine, color: "text-cyan-400" },
+      { name: "Next.js", icon: RiNextjsFill, color: "text-white" },
+      { name: "JavaScript", icon: RiJavascriptFill, color: "text-yellow-400" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-sky-400" },
+      { name: "DaisyUI", icon: SiDaisyui, color: "text-teal-400" },
+     { name: "Shadcn/UI", icon: TbComponents, color: "text-white" },
+      { name: "Framer Motion", icon: SiFramer, color: "text-pink-400" },
+    ],
+  },
+
+  {
+    title: "Backend & Database",
+    skills: [
+      { name: "Node.js", icon: RiNodejsLine, color: "text-green-500" },
+      { name: "Express.js", icon: SiExpress, color: "text-gray-300" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+      { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
+      { name: "Stripe", icon: SiStripe, color: "text-violet-400" },
+      { name: "Cloudinary", icon: SiCloudinary, color: "text-orange-400" },
+    ],
+  },
+
+  {
+    title: "Design & Tools",
+    skills: [
+      { name: "GitHub", icon: RiGithubFill, color: "text-white" },
+      { name: "Figma", icon: SiFigma, color: "text-pink-500" },
+      { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+    ],
+  },
+
+ {
+  title: "AI Development",
+  skills: [
+    { name: "ChatGPT", icon: FaRobot, color: "text-green-400" },
+    { name: "Claude", icon: BsStars, color: "text-orange-400" },
+    { name: "Gemini AI", icon: BsStars, color: "text-blue-400" },
+  ],
+}, 
+];
 
 export default function AboutMe() {
   return (
@@ -14,10 +86,10 @@ export default function AboutMe() {
             </span>
           </div>
           <h2 className="font-label-serif text-label-serif text-primary-fixed-dim uppercase tracking-[0.2em]">
-            ANTARA
+            Here,this is ANTARA
           </h2>
           <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-none max-w-2xl">
-            A Web Developer focused on Full-Stack and Frontend Systems
+            A full-stack Web Developer focused on Full-Stack and Frontend Systems
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
             A developer driven by a passion for building efficient, secure, and scalable applications.
@@ -25,14 +97,20 @@ export default function AboutMe() {
             boundaries in code. Intelligent system design stands at the core of my interests, combined
             with a deep philosophy for clean, maintainable architecture.
           </p>
-          <div className="mt-4">
-            <button className="group flex items-center gap-4 bg-primary px-8 py-4 rounded-full text-on-primary font-nav-link text-nav-link uppercase transition-all hover:shadow-[0_0_30px_rgba(255,241,218,0.2)] hover:scale-[1.02] active:scale-95 cursor-pointer">
-              Stay connected and let the good work begin.
-              <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
-                arrow_forward
-              </span>
-            </button>
-          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
+  <a
+    href="/A N T A R A S A H A Front-end Developer Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-nav-link uppercase transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,241,218,.25)]"
+  >
+    <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
+      description
+    </span>
+
+    View Resume
+  </a>
+</div>
         </div>
 
         {/* Framed Image Block */}
@@ -71,26 +149,146 @@ export default function AboutMe() {
       </div>
 
       {/* Technical Breadcrumbs / Secondary Info */}
-      <div className="mt-32 pt-16 border-t border-border-custom">
-        <div className="flex flex-wrap gap-8 justify-between items-end">
-          <div className="flex flex-col gap-2">
-            <span className="font-nav-link text-nav-link text-on-surface-variant uppercase">
-              Primary Stack
-            </span>
-            <div className="flex flex-wrap gap-4">
-              <span className="font-label-serif text-label-serif text-primary italic">React.js</span>
-              <span className="font-label-serif text-label-serif text-primary italic">Node.js</span>
-              <span className="font-label-serif text-label-serif text-primary italic">JavaScript</span>
-              <span className="font-label-serif text-label-serif text-primary italic">Next.js</span>
-            </div>
-          </div>
-          <div className="max-w-xs text-left lg:text-right">
-            <p className="font-nav-link text-[12px] text-on-surface-variant uppercase leading-relaxed">
-              Currently exploring high-performance edge computing and Rust-based backend implementations for distributed systems.
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* ====================== TECH STACK ====================== */}
+
+<div className="mt-32 border-t border-border-custom pt-20">
+
+    <div className="mb-14">
+
+        <span className="uppercase tracking-[4px] text-sm text-primary-fixed-dim">
+
+            My Tech Stack
+
+        </span>
+
+        <h2 className="mt-4 text-4xl md:text-5xl font-bold">
+
+            Technologies I Work With
+
+        </h2>
+
+        <p className="mt-4 text-on-surface-variant max-w-2xl leading-8">
+
+            I build scalable full-stack applications using modern frontend,
+            backend, cloud services and AI-assisted development tools.
+
+        </p>
+
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-8">
+
+        {skillCategories.map((category, index) => (
+
+            <motion.div
+  key={category.title}
+  initial={{ opacity: 0, y: 60, scale: 0.95 }}
+  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 0.7,
+    delay: index * 0.15,
+    ease: "easeOut",
+  }}
+  animate={{
+    y: [0, -6, 0],
+  }}
+  whileHover={{
+    scale: 1.02,
+    y: -10,
+    transition: { duration: 0.25 },
+  }}
+  className="relative overflow-hidden rounded-[30px] border border-white/10
+  bg-white/[0.03] backdrop-blur-xl p-8"
+>
+
+                <div className="flex items-center gap-4 mb-8">
+
+                    <h3 className="uppercase tracking-[4px] text-sm font-semibold text-primary whitespace-nowrap">
+
+                        {category.title}
+
+                    </h3>
+
+                    <div className="flex-1 h-px bg-white/10"></div>
+
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+
+                    {category.skills.map((skill, i) => {
+
+                        const Icon = skill.icon;
+
+                        return (
+
+                            <motion.div
+
+                                key={skill.name}
+
+                                initial={{
+                                    opacity: 0,
+                                    scale: .8,
+                                }}
+
+                                whileInView={{
+                                    opacity: 1,
+                                    scale: 1,
+                                }}
+
+                                transition={{
+                                    delay: i * .05,
+                                }}
+
+                                whileHover={{
+                                    scale: 1.08,
+                                    y: -5,
+                                }}
+
+                                className="group
+                                flex
+                                items-center
+                                gap-3
+                                rounded-full
+                                border
+                                border-white/10
+                                bg-white/[0.04]
+                                px-5
+                                py-3
+                                cursor-pointer
+                                transition-all
+                                hover:border-primary
+                                hover:bg-primary/10"
+
+                            >
+
+                                <Icon
+
+                                    className={`text-xl transition-transform duration-300 group-hover:rotate-12 ${skill.color}`}
+
+                                />
+
+                                <span className="font-medium">
+
+                                    {skill.name}
+
+                                </span>
+
+                            </motion.div>
+
+                        );
+
+                    })}
+
+                </div>
+
+            </motion.div>
+
+        ))}
+
+    </div>
+
+</div>
     </section>
   );
 }
