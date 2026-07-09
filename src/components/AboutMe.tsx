@@ -91,15 +91,68 @@ export default function AboutMe() {
           <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-none max-w-2xl">
             A full-stack Web Developer focused on Full-Stack and Frontend Systems
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-            A developer driven by a passion for building efficient, secure, and scalable applications.
-            Expertise in modern web technologies with a focus on performance, security, and pushing
-            boundaries in code. Intelligent system design stands at the core of my interests, combined
-            with a deep philosophy for clean, maintainable architecture.
-          </p>
+         <div className="max-w-xl text-on-surface-variant">
+  <h2 className="text-3xl font-bold mb-6 text-white">
+    Why You Should Hire Me?
+  </h2>
+
+  <ul className="space-y-4 list-disc pl-5 text-body-lg leading-relaxed">
+    <li>
+      <span className="font-semibold text-white">Strong Full-Stack Expertise:</span>{" "}
+      Skilled in building responsive, secure, and scalable web applications
+      using React, Next.js, TypeScript, Express.js, MongoDB, Firebase
+      Authentication, and Tailwind CSS.
+    </li>
+
+    <li>
+      <span className="font-semibold text-white">End-to-End Development:</span>{" "}
+      Capable of developing complete applications from intuitive frontend
+      interfaces to robust backend APIs, authentication systems, and database
+      management.
+    </li>
+
+    <li>
+      <span className="font-semibold text-white">Problem-Solving Mindset:</span>{" "}
+      Enjoy tackling complex bugs and technical challenges with patience,
+      analytical thinking, and a focus on delivering reliable solutions.
+    </li>
+
+    <li>
+      <span className="font-semibold text-white">Clean & Maintainable Code:</span>{" "}
+      Committed to writing readable, reusable, and well-structured code that
+      supports long-term scalability and maintainability.
+    </li>
+
+    <li>
+      <span className="font-semibold text-white">
+        Performance & User Experience:
+      </span>{" "}
+      Build fast, responsive, and user-friendly applications that deliver an
+      excellent experience across devices.
+    </li>
+
+    <li>
+      <span className="font-semibold text-white">Continuous Learner:</span>{" "}
+      Passionate about exploring new technologies, staying updated with
+      industry trends, and continuously improving my technical skills.
+    </li>
+
+    <li>
+      <span className="font-semibold text-white">Collaborative Team Player:</span>{" "}
+      Communicate effectively, work well within cross-functional teams, and
+      take ownership of assigned tasks.
+    </li>
+
+    <li>
+      <span className="font-semibold text-white">Quality-Driven Approach:</span>{" "}
+      Focused on delivering reliable, secure, and high-quality software that
+      meets business and user requirements.
+    </li>
+  </ul>
+</div>
           <div className="mt-6 flex flex-wrap gap-4">
   <a
-    href="/A N T A R A S A H A Front-end Developer Resume.pdf"
+    href="/Antara's Frontend Resume.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="group inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-nav-link uppercase transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,241,218,.25)]"
