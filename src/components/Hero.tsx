@@ -46,7 +46,13 @@ export default function Hero() {
 
           {/* Quote 4: Bottom-Right */}
           <div className="absolute -bottom-4 right-0 md:right-4 font-mono text-[10px] md:text-xs tracking-widest text-primary-fixed-dim opacity-70 uppercase border border-primary/20 px-3 py-1 select-none">
-            STAY_STABLE
+            {/* Quote 3: Bottom-Left */}
+          <div className="absolute bottom-12 left-0 md:left-4 font-mono text-[10px] md:text-xs tracking-widest text-secondary-fixed-dim opacity-40 uppercase px-2 py-1 glass-panel select-none">
+            BUILD. TEST. DEPLOY. REPEAT.
+          </div>{/* Quote 3: Bottom-Left */}
+          <div className="absolute bottom-12 left-0 md:left-4 font-mono text-[10px] md:text-xs tracking-widest text-secondary-fixed-dim opacity-40 uppercase px-2 py-1 glass-panel select-none">
+           STAY_STABLE. STAY_CURIOUS.
+          </div>
           </div>
         </div>
       </div>
